@@ -11,9 +11,21 @@
 |
 */
 
+//Get Master homepage view
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.master');
 });
+
+//Bill Splitter Controller
+Route::resource('bill', 'BillController');
 
 //logViewer Service Package
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
+/**
+* Log viewer
+* (only accessible locally)
+*/
+if(config('app.env') == 'local') {
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+}
