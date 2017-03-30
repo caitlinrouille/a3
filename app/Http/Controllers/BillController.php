@@ -11,74 +11,26 @@ class BillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-      return view('bill.bill');
+    public function bill(Request $request){
+        $billSplit = $request->input('billSplit', null);
+
+        if ($billSplit)
+            {
+                $split = $_POST['split'];
+                $price = $_POST['price'];
+                $total = $price / $split; // # Divide total price
+                $rounded = round($total); // # Round total price
+                if (isset($_POST['roundBill']))
+                    {
+                    $results = "Each person owes $" . $rounded;
+                    }
+                  else
+                    {
+                    $results = "Each person owes $" . $total;
+                    }
+            }
+
+            return view('bill.bill');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

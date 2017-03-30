@@ -15,18 +15,13 @@
 
 </head>
 <body>
-
-    <header>
-        
-    </header>
-
+    <div class="container mg-top-20">
+        <h3>Bill Splitter</h3>
     <section>
         @yield('content')
     </section>
-
-    <footer>
-        &copy; {{ date('Y') }}
-    </footer>
+    <div class="alert-info mg-top-20">
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 

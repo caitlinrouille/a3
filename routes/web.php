@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 //Bill Splitter Controller
-Route::resource('bill', 'BillController');
+Route::get('/bill', 'BillController@bill');
 
 //logViewer Service Package
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
