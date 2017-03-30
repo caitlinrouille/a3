@@ -12,12 +12,11 @@ class BillController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function bill(Request $request){
-        $billSplit = $request->input('billSplit', null);
+        $split = $request->input('split', null);
+        $price = $request->input('price', null);
 
-        if ($billSplit)
+        if ($split)
             {
-                $split = $_POST['split'];
-                $price = $_POST['price'];
                 $total = $price / $split; // # Divide total price
                 $rounded = round($total); // # Round total price
                 if ($billSplit)
@@ -31,7 +30,9 @@ class BillController extends Controller
             }
 
             return view('bill.bill')->with([
-              'billSplit' => $billSplit
+              'billSplit' => $billSplit,
+              'total' => $total,
+              'rounded' => $rounded
             ]);
     }
 }
