@@ -20,7 +20,7 @@ class BillController extends Controller
                 $price = $_POST['price'];
                 $total = $price / $split; // # Divide total price
                 $rounded = round($total); // # Round total price
-                if (isset($_POST['roundBill']))
+                if ($billSplit)
                     {
                     $results = "Each person owes $" . $rounded;
                     }
@@ -30,7 +30,8 @@ class BillController extends Controller
                     }
             }
 
-            return view('bill.bill');
+            return view('bill.bill')->with([
+              'billSplit' => $billSplit
+            ]);
     }
-
 }

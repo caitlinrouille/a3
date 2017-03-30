@@ -20,8 +20,7 @@
     <section>
         @yield('content')
     </section>
-    <div class="alert-info mg-top-20">
-</div>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
