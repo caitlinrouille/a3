@@ -33,7 +33,7 @@
     </div><input name="btn_submit" type="submit" value="Calculate Bill">
 </form>
 
-@if($billSplit)
+@if($results)
     <div class="alert-info mg-top-20">
     </div>
 @endif

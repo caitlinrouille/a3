@@ -15,11 +15,13 @@ class BillController extends Controller
         $split = $request->input('split', null);
         $price = $request->input('price', null);
 
+
         if ($split)
             {
                 $total = $price / $split; // # Divide total price
                 $rounded = round($total); // # Round total price
-                if ($billSplit)
+
+                if ($request->has('roundBill'))
                     {
                     $results = "Each person owes $" . $rounded;
                     }
@@ -30,9 +32,11 @@ class BillController extends Controller
             }
 
             return view('bill.bill')->with([
-              'billSplit' => $billSplit,
+              'split' => $split,
               'total' => $total,
-              'rounded' => $rounded
+              'rounded' => $rounded,
+              'roundBill' => $request->has('roundBill'),
+              'results' => $results
             ]);
     }
 }
