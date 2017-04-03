@@ -35,6 +35,7 @@
 
 @if($results)
     <div class="alert-info mg-top-20">
+        {{$results}}
     </div>
 @endif
 
