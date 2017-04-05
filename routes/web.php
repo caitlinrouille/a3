@@ -11,11 +11,13 @@
 |
 */
 
-//Get Master homepage view
-Route::get('/', function () {
-    return view('bill.bill');
-});
+//Set homepage to the index controller and BillController file
+Route::get('/', 'BillController@index');
 
+//get the page /bill
+Route::get('/bill', 'BillController@index');
+
+//get the logic that hooks up the bill calculations and validation
 Route::post('/bill', 'BillController@bill');
 
 //logViewer Service Package

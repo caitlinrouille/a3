@@ -35,12 +35,13 @@
     </div><input name="btn_submit" type="submit" value="Calculate Bill">
 </form>
 
+<!-- Show the results of the bill -->
 @if($results)
     <div class="alert-info mg-top-20">
         {{$results}}
     </div>
 @endif
-
+<!-- show the errors on validate -->
 @if(count($errors) > 0)
     <ul>
         @foreach($errors->all() as $error)

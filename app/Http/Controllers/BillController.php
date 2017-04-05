@@ -12,6 +12,14 @@ class BillController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+     public function index(Request $request) {
+         $results=null;
+
+         return view('bill.bill')->with([
+           'results' => $results
+         ]);
+     }
+
      /**
  	* GET
      * /bill}
