@@ -17,6 +17,7 @@ class BillController extends Controller
      * /bill}
  	*/
     public function bill(Request $request){
+
         $this->validate($request, [
             'split' => 'required|numeric',
             'price' => 'required|numeric',
@@ -54,6 +55,6 @@ class BillController extends Controller
               'roundBill' => $request->has('roundBill'),
               'results' => $results
             ]);
-    }
 
+    }
 }

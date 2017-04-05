@@ -5,13 +5,14 @@
 @endsection
 
 @section('content')
-<form method="GET" action="/bill">
+<form method="post" action="/bill">
+    {{ csrf_field() }}
 
     <div class="form-group">
-        <label for="split">Split how many ways?</label> <input id="split" name="split" required="" type="text">
+        <label for="split">Split how many ways?</label> <input id="split" name="split" value='{{ old('split') }}' required="" type="text">
     </div>
     <div class="form-group">
-        <label for="price">How much was the tab?</label> <input id="price" name="price" required="" type="text">
+        <label for="price">How much was the tab?</label> <input id="price" name="price" value='{{ old('price') }}' required="" type="text">
     </div>
     <div class="form-group">
         <label for="service">How was the service:</label> <select id="service" name="service">

@@ -12,15 +12,11 @@
 */
 
 //Get Master homepage view
-// Route::get('/', function () {
-//     return view('layouts.master');
-// });
+Route::get('/', function () {
+    return view('bill.bill');
+});
 
-Route::get('/', 'BillController@bill');
-
-
-//Bill Splitter Controller
-Route::get('/bill', 'BillController@bill');
+Route::post('/bill', 'BillController@bill');
 
 //logViewer Service Package
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
