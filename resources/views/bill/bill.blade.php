@@ -6,6 +6,7 @@
 
 @section('content')
 <form method="GET" action="/bill">
+
     <div class="form-group">
         <label for="split">Split how many ways?</label> <input id="split" name="split" required="" type="text">
     </div>
@@ -37,6 +38,14 @@
     <div class="alert-info mg-top-20">
         {{$results}}
     </div>
+@endif
+
+@if(count($errors) > 0)
+    <ul>
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
 @endif
 
 @endsection

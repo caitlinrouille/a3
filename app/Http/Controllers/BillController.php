@@ -11,10 +11,19 @@ class BillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     /**
+ 	* GET
+     * /bill}
+ 	*/
     public function bill(Request $request){
+        $this->validate($request, [
+            'split' => 'required|numeric',
+            'price' => 'required|numeric',
+        ]);
+
         $split = $request->input('split', null);
         $price = $request->input('price', null);
-
 
         if ($split)
             {
@@ -31,6 +40,13 @@ class BillController extends Controller
                     }
             }
 
+            if (!$split)
+            {
+                $total=null;
+                $results=null;
+                $rounded=null;
+            }
+
             return view('bill.bill')->with([
               'split' => $split,
               'total' => $total,
@@ -39,4 +55,5 @@ class BillController extends Controller
               'results' => $results
             ]);
     }
+
 }
