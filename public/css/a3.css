@@ -15,3 +15,7 @@ body {
 .mg-top-20 {
   margin-top:20px;
 }
+
+.alert-info {
+    padding:10px;
+}

@@ -17,9 +17,10 @@
 <body>
     <div class="container mg-top-20">
         <h3>Bill Splitter</h3>
-    <section>
-        @yield('content')
-    </section>
+        <section>
+            @yield('content')
+        </section>
+    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

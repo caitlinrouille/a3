@@ -39,30 +39,28 @@ class BillController extends Controller
                 $total = $price / $split; // # Divide total price
                 $rounded = round($total); // # Round total price
 
-                if ($request->has('roundBill'))
-                    {
-                    $results = "Each person owes $" . $rounded;
-                    }
-                  else
-                    {
-                    $results = "Each person owes $" . $total;
-                    }
+                if ($request->has('roundBill')){
+                        $results = "Each person owes $" . $rounded;
+                }
+                else {
+                        $results = "Each person owes $" . $total;
+                }
             }
-
-            if (!$split)
+        //If there is no input in the split field, don't display the following data. This prevents errors onload.
+        if (!$split)
             {
                 $total=null;
                 $results=null;
                 $rounded=null;
             }
 
+            //Call the variables into the views
             return view('bill.bill')->with([
-              'split' => $split,
-              'total' => $total,
-              'rounded' => $rounded,
-              'roundBill' => $request->has('roundBill'),
-              'results' => $results
+                'split' => $split,
+                'total' => $total,
+                'rounded' => $rounded,
+                'roundBill' => $request->has('roundBill'),
+                'results' => $results
             ]);
-
     }
 }
