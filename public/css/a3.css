@@ -19,3 +19,8 @@ body {
 .alert-info {
     padding:10px;
 }
+
+.view-error {
+    color:red;
+    margin-top:5px;
+}
