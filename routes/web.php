@@ -11,14 +11,11 @@
 |
 */
 
-//Set homepage to the index controller and BillController file
-Route::get('/', 'BillController@index');
-
 //get the page /bill
-Route::get('/bill', 'BillController@index');
+Route::get('/score', 'ScoreController@index');
 
 //get the logic that hooks up the bill calculations and validation
-Route::post('/bill', 'BillController@bill');
+//Route::post('/bill', 'BillController@bill');
 
 //logViewer Service Package
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

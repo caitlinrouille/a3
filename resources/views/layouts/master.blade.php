@@ -2,21 +2,23 @@
 <html>
 <head>
     <title>
-        @yield('title', 'Caitlin Rouille - A3 Assignment')
+        @yield('title', 'Caitlin Rouille - A4 Assignment')
     </title>
 
     <meta charset='utf-8'>
 
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
 	<link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css' rel='stylesheet'>
-    <link href="/css/a3.css" type='text/css' rel='stylesheet'>
+    <link href="/css/a4.css" type='text/css' rel='stylesheet'>
 
     @stack('head')
 
 </head>
 <body>
-    <div class="container mg-top-20">
-        <h3>Bill Splitter</h3>
+    <div class="container-fluid mg-top-20">
+        <img class="img-responsive mg-top-15" src="img/golf-course.png" alt="Golf Course"/>
+        <h3>9-Hole Golf Score Card</h3>
+        <p>This is a 1-4 player score card for the game of Golf. Enter in the name of each player (up to 4 players) and this tool will add your score and declare a winner. Enjoy and good luck!</p>
         <section>
             @yield('content')
         </section>

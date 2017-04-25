@@ -1,0 +1,37 @@
+/*Caitlin Rouille - a4 Assignment*/
+
+body {
+    background:green;
+}
+
+h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-style:italic;
+}
+.container-fluid {
+    background-color:#fff;
+    width:800px;
+    border:6px solid lightgreen;
+}
+
+.container-fluid img {
+    padding-left:0;
+    padding-right:0;
+}
+
+.mg-top-20 {
+  margin-top:20px;
+}
+
+.mg-top-15 {
+  margin-top:15px;
+}
+
+.alert-info {
+    padding:10px;
+}
+
+.view-error {
+    color:red;
+    margin-top:5px;
+}
