@@ -15,9 +15,77 @@ class ScoreController extends Controller
      */
     public function index()
     {
-        return view('score.score');
+        $score=null;
+
+        return view('score.score')->with([
+          'score' => $score
+        ]);
 
     }
+
+    /**
+   * GET
+    * /}
+   */
+   public function score(Request $request){
+
+       $this->validate($request, [
+           'holeOne' => 'required|numeric',
+           'holeTwo' => 'required|numeric',
+           'holeThree'=> 'required|numeric',
+           'holeFour' => 'required|numeric',
+           'holeFive' => 'required|numeric',
+           'holeSix' => 'required|numeric',
+           'holeSeven'=> 'required|numeric',
+           'holeEight' => 'required|numeric',
+           'holeNine' => 'required|numeric',
+           'playerName' => 'required|alpha',
+       ]);
+           $playerName = $request->input('playerName', null);
+           $holeOne = $request->input('holeOne', null);
+           $holeTwo = $request->input('holeTwo', null);
+           $holeThree = $request->input('holeThree', null);
+           $holeFour = $request->input('holeFour', null);
+           $holeFive = $request->input('holeFive', null);
+           $holeSix = $request->input('holeSix', null);
+           $holeSeven = $request->input('holeSeven', null);
+           $holeEight = $request->input('holeEight', null);
+           $holeNine = $request->input('holeNine', null);
+
+           $total = $holeOne * $holeTwo + $holeThree + $holeFour + $holeFive + $holeSix + $holeSeven + $holeEight + $holeNine;
+           $score = $playerName . " scored a " . $total;
+
+       //If there is no input in the score fields, don't display the following data. This prevents errors onload.
+       if (!$score)
+           {
+               $playerName = null;
+               $holeOne = null;
+               $holeTwo = null;
+               $holeThree = null;
+               $holeFour = null;
+               $holeFive = null;
+               $holeSix = null;
+               $holeSeven = null;
+               $holeEight = null;
+               $holeNine = null;
+           }
+
+           //Call the variables into the views
+           return view('score.score')->with([
+               'playerName' => $playerName,
+               'holeOne' => $holeOne,
+               'holeTwo' => $holeTwo,
+               'holeThree' => $holeThree,
+               'holeFour' => $holeFour,
+               'holeFive' => $holeFive,
+               'holeSix' => $holeSix,
+               'holeSeven' => $holeSeven,
+               'holeEight' => $holeEight,
+               'holeNine' => $holeNine,
+               'score' => $score,
+               'total' => $total
+           ]);
+   }
 
     /**
      * Show the form for creating a new resource.
