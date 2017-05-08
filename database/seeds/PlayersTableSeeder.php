@@ -14,10 +14,10 @@ class PlayersTableSeeder extends Seeder
     {
         # Array of author data to add
         $players = [
-            ['Arnold Palmer', 66],
-            ['Fred Couples', 70],
-            ['John Daly', 74],
-            ['Phil Mickelson', 80],
+            ['Arnold Palmer'],
+            ['Fred Couples'],
+            ['John Daly'],
+            ['Phil Mickelson'],
         ];
 
         $timestamp = Carbon\Carbon::now()->subDays(count($players));
@@ -28,7 +28,6 @@ class PlayersTableSeeder extends Seeder
                 'created_at' => $timestampForThisPlayer,
                 'updated_at' => $timestampForThisPlayer,
                 'full_name' => $player[0],
-                'player_score' => $player[1],
             ]);
         }
     }
