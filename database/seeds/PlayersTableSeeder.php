@@ -27,7 +27,7 @@ class PlayersTableSeeder extends Seeder
             Author::insert([
                 'created_at' => $timestampForThisPlayer,
                 'updated_at' => $timestampForThisPlayer,
-                'full_name' => $player[0],
+                'full_name' => $player,
             ]);
         }
     }
