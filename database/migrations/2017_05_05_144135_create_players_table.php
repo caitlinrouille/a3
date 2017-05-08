@@ -18,7 +18,6 @@ class CreatePlayersTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('full_name');
-            $table->integer('player_score');
         });
     }
 
