@@ -14,6 +14,15 @@ class ScoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //  public function practiceX() {
+    //    $player = Player::where('player','=','Arnold Palmer')->first();
+    //
+    //     dump($player->player.' is tagged with: ');
+    //     foreach($player->courses as $course) {
+    //         dump($course->player);
+    //     }
+    // }
+
     public function index()
     {
         $score=null;
