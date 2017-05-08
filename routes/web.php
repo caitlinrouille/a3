@@ -14,6 +14,7 @@
 /**
 * Main homepage visitors see when they visit just /
 */
+
 Route::get('/', 'ScoreController@index');
 Route::post('/', 'ScoreController@score');
 

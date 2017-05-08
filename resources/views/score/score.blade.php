@@ -40,8 +40,27 @@
             </tbody>
           </table>
     </div>
-    <input name="btn_submit" type="submit" value="Total Score">
+    <div class="col-sm-12 form-group">
+    <label for="course">Course Name:</label>
+        <!-- <select id="courseName" name="courseName">
+            <option value='choose'>
+                Choose one...
+            </option>
+            <option value='{{ old('sandyBurr') }}'>
+                Sandy Burr Country Club
+            </option>
+            <option value='{{ old('sassamonTrace') }}'>
+                Sassamon Trace Country Club
+            </option>
+            <option value='{{ old('brocktonCC') }}'>
+                Brockton Country Club
+            </option>
+        </select> -->
 
+    </div>
+    <div class="col-sm-12">
+        <input name="btn_submit" type="submit" value="Calculate Score" class="btn btn-primary">
+    </div>
     <div class="col-sm-12">
         @if($score)
             <div class="alert-info mg-top-20">

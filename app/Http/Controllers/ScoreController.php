@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Score;
 use Illuminate\Http\Request;
-
+use App\Player;
+use App\Course;
 
 class ScoreController extends Controller
 {
@@ -20,7 +21,6 @@ class ScoreController extends Controller
         return view('score.score')->with([
           'score' => $score
         ]);
-
     }
 
     /**
