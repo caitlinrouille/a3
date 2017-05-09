@@ -19,10 +19,10 @@ class PlayerCourseTableSeeder extends Seeder
         $playerTigerW = Player::where('full_name','=','Tiger Woods')->first();
 
         //Call to variables:Courses
-        $courseSassamon = Player::where('course_name','=','Sassamon Trace')->first();
-        $courseBrockton = Player::where('course_name','=','Brockton Country Club')->first();
-        $courseBlueHills = Player::where('course_name','=','Blue Hills Country Club')->first();
-        $courseSandyBurr = Player::where('course_name','=','Sandy Burr')->first();
+        $courseSassamon = Course::where('course_name','=','Sassamon Trace')->first();
+        $courseBrockton = Course::where('course_name','=','Brockton Country Club')->first();
+        $courseBlueHills = Course::where('course_name','=','Blue Hills Country Club')->first();
+        $courseSandyBurr = Course::where('course_name','=','Sandy Burr')->first();
 
 
         $playerArnoldP->courses()->attach($courseSassamon->id);

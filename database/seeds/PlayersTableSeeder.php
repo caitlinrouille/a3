@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 use App\Player;
 
 class PlayersTableSeeder extends Seeder
@@ -12,7 +13,7 @@ class PlayersTableSeeder extends Seeder
     */
     public function run()
     {
-        
+
         $playerArnoldP = Player::create(array(
             'full_name' => 'Arnold Palmer',
             'handicap' => 3
