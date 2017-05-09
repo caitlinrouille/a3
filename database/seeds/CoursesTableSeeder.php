@@ -13,9 +13,9 @@ class CoursesTableSeeder extends Seeder
     public function run()
     {
         $courses = [
-            ['Sandy Burr'],
-            ['Brockton Country Club'],
-            ['Sassamon Trace'],
+            'Sandy Burr',
+            'Brockton Country Club',
+            'Sassamon Trace',
         ];
 
         $timestamp = Carbon\Carbon::now()->subDays(count($courses));

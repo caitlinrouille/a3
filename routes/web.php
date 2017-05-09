@@ -18,7 +18,6 @@
 Route::get('/', 'ScoreController@index');
 Route::post('/', 'ScoreController@score');
 
-
 //logViewer Service Package
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 

@@ -23,6 +23,8 @@ class ScoreController extends Controller
     //     }
     // }
 
+
+
     public function index()
     {
         $score=null;
@@ -94,6 +96,10 @@ class ScoreController extends Controller
                'score' => $score,
                'total' => $total
            ]);
+
+           $result = Player::all();
+           dump($result->toArray());
+
    }
 
     /**
