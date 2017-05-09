@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     //each course has been played by many players
-    public function players(){
-        return $this->belongsToMany('player_id')->withTimestamps();
+    protected $fillable = [];
+    protected $table = 'courses';
+
+    public function playerList(){
+        return $this->belongsToMany('App\Player')->withTimestamps();
     }
 
 }

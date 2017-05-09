@@ -12,6 +12,7 @@ class PlayersTableSeeder extends Seeder
     */
     public function run()
     {
+        
         $playerArnoldP = Player::create(array(
             'full_name' => 'Arnold Palmer',
             'handicap' => 3

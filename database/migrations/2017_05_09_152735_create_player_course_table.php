@@ -17,8 +17,8 @@ class CreatePlayerCourseTable extends Migration
             Schema::create('player_course', function (Blueprint $table) {
                 $table->increments('id');
 
-                $table->integer('course_id')->unisgned();
-                $table->integer('player_id')->unisgned();
+                $table->integer('course_id')->unsigned();
+                $table->integer('player_id')->unsigned();
 
                 $table->timestamps();
 
