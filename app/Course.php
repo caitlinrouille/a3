@@ -10,7 +10,7 @@ class Course extends Model
     protected $fillable = [];
     protected $table = 'courses';
 
-    public function playerList(){
+    public function players(){
         return $this->belongsToMany('App\Player')->withTimestamps();
     }
 
