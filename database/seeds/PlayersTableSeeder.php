@@ -12,23 +12,24 @@ class PlayersTableSeeder extends Seeder
     */
     public function run()
     {
-        # Array of author data to add
-        $players = [
-            'Arnold Palmer',
-            'Fred Couples',
-            'John Daly',
-            'Phil Mickelson',
-        ];
+        $playerArnoldP = Player::create(array(
+            'full_name' => 'Arnold Palmer',
+            'handicap' => 3
+        ));
 
-        $timestamp = Carbon\Carbon::now()->subDays(count($players));
+        $playerFredC = Player::create(array(
+            'full_name' => 'Fred Couples',
+            'handicap' => 4
+        ));
 
-        foreach($players as $player) {
-            $timestampForThisPlayer = $timestamp->addDay()->toDateTimeString();
-            Player::insert([
-                'created_at' => $timestampForThisPlayer,
-                'updated_at' => $timestampForThisPlayer,
-                'full_name' => $player,
-            ]);
-        }
+        $playerTigerW = Player::create(array(
+            'full_name' => 'Tiger Woods',
+            'handicap' => 2
+        ));
+
+        $playerJohnD = Player::create(array(
+            'full_name' => 'John Daly',
+            'handicap' => 5
+        ));
     }
 }

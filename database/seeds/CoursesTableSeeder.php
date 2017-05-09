@@ -12,21 +12,20 @@ class CoursesTableSeeder extends Seeder
     */
     public function run()
     {
-        $courses = [
-            'Sandy Burr',
-            'Brockton Country Club',
-            'Sassamon Trace',
-        ];
+        $courseSassamon = Course::create(array(
+            'course_name' => 'Sassamon Trace'
+        ));
 
-        $timestamp = Carbon\Carbon::now()->subDays(count($courses));
+        $courseBrockton = Course::create(array(
+            'course_name' => 'Brockton Country Club'
+        ));
 
-        foreach($courses as $course) {
-            $timestampForThisCourse = $timestamp->addDay()->toDateTimeString();
-            Course::insert([
-                'created_at' => $timestampForThisCourse,
-                'updated_at' => $timestampForThisCourse,
-                'course_name' => $course,
-            ]);
-        }
+        $courseSandyBurr = Course::create(array(
+            'course_name' => 'Sandy Burr Country Club'
+        ));
+
+        $courseBlueHills = Course::create(array(
+            'course_name' => 'Blue Hills Country Club'
+        ));
     }
 }

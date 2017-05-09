@@ -11,22 +11,24 @@ class PlayerCourseTableSeeder extends Seeder
      *
      * @return void
      */
-     public function run()
- {
+    public function run()
+    {
+        $playerArnoldP->courses()->attach($courseSassamon->id);
+        $playerArnoldP->courses()->attach($courseBrockton->id);
 
-     $players =[
-         'Arnold Palmer' => ['Sandy Burr','Brockton Country Club','Sassamon Trace'],
-         'Fred Couples' => ['Sandy Burr','Brockton Country Club','Sassamon Trace'],
-         'John Daly' => ['Sandy Burr','Brockton Country Club','Sassamon Trace'],
-         'Phil Mickelson' => ['Sandy Burr','Brockton Country Club','Sassamon Trace'],
-     ];
-     foreach($players as $courses) {
-         $player = Player::where('full_name','like',$players)->first();
+        $playerFredC->courses()->attach($courseBrockton->id);
+        $playerFredC->courses()->attach($courseSandyBurr->id);
 
-         foreach($courses as $course_name) {
-             $course = Course::where('course_name','LIKE',$course_name)->first();
-             $player->courses()->save($player);
-         }
-     }
+        $playerJohnD->courses()->attach($courseBlueHills->id);
+        $playerJohnD->courses()->attach($courseBrockton->id);
+        $playerJohnD->courses()->attach($courseSassamon->id);
+
+
+        $playerTigerW->courses()->attach($courseSassamon->id);
+        $playerTigerW->courses()->attach($courseBrockton->id);
+        $playerTigerW->courses()->attach($courseBlueHills->id);
+        $playerTigerW->courses()->attach($courseSandyBurr->id);
+
+
     }
 }
