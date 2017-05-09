@@ -21,12 +21,12 @@ class PlayerCourseTableSeeder extends Seeder
          'Phil Mickelson' => ['Sandy Burr','Brockton Country Club','Sassamon Trace'],
      ];
      foreach($players as $courses) {
-         $player = Player::where('player','like',$player)->first();
+         $player = Player::where('full_name','like',$players)->first();
 
-         foreach($courses as $course) {
-             $course = Course::where('name','LIKE',$course)->first();
+         foreach($courses as $course_name) {
+             $course = Course::where('course_name','LIKE',$course_name)->first();
              $player->courses()->save($player);
          }
      }
- }
+    }
 }
