@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Player;
 use App\Course;
+use App\Player;
 
 class PlayerCourseTableSeeder extends Seeder
 {

@@ -14,7 +14,7 @@ class CreatePlayerCourseTable extends Migration
     public function up()
     {
         {
-            Schema::create('player_course', function (Blueprint $table) {
+            Schema::create('course_player', function (Blueprint $table) {
                 $table->increments('id');
 
                 $table->integer('course_id')->unsigned();
@@ -34,7 +34,7 @@ class CreatePlayerCourseTable extends Migration
     public function down()
     {
         {
-            Schema::drop('player_course');
+            Schema::drop('course_player');
         }
     }
 }
