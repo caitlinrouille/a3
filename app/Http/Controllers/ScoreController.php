@@ -14,19 +14,11 @@ class ScoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //  public function practiceX() {
-    //    $player = Player::where('player','=','Arnold Palmer')->first();
-    //
-    //     dump($player->player.' is tagged with: ');
-    //     foreach($player->courses as $course) {
-    //         dump($course->player);
-    //     }
-    // }
-
 
 
     public function index()
     {
+
         $score=null;
 
         return view('score.score')->with([
@@ -94,11 +86,9 @@ class ScoreController extends Controller
                'holeEight' => $holeEight,
                'holeNine' => $holeNine,
                'score' => $score,
-               'total' => $total
+               'total' => $total,
            ]);
 
-           $result = Player::all();
-           dump($result->toArray());
 
    }
 
@@ -107,9 +97,11 @@ class ScoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function playerList()
     {
-        //
+        $player = new Player;
+        $player->full_name = 'aiden ahmed';
+        $player->handicap = 1;
     }
 
     /**

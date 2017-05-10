@@ -42,20 +42,7 @@
     </div>
     <div class="col-sm-12 form-group">
     <label for="course">Course Name:</label>
-        <!-- <select id="courseName" name="courseName">
-            <option value='choose'>
-                Choose one...
-            </option>
-            <option value='{{ old('sandyBurr') }}'>
-                Sandy Burr Country Club
-            </option>
-            <option value='{{ old('sassamonTrace') }}'>
-                Sassamon Trace Country Club
-            </option>
-            <option value='{{ old('brocktonCC') }}'>
-                Brockton Country Club
-            </option>
-        </select> -->
+
 
     </div>
     <div class="col-sm-12">
@@ -71,6 +58,10 @@
 </form>
     <div class="col-sm-12">
       <h4>Leaderboard:</h4>
+      <ul>
+          <li>{{ $player -> full_name }}</li>
+      </ul>
+
     </div>
     <!-- show the errors on validate -->
     @if(count($errors) > 0)
