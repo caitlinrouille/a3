@@ -59,7 +59,9 @@
     <div class="col-sm-12">
       <h4>Leaderboard:</h4>
       <ul>
-          <li>{{ $player -> full_name }}</li>
+          @foreach ($players as $player)
+          <li>{{ $player->full_name }}</li>
+          @endforeach
       </ul>
 
     </div>

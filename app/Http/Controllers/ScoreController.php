@@ -99,9 +99,12 @@ class ScoreController extends Controller
      */
     public function playerList()
     {
-        $player = new Player;
-        $player->full_name = 'aiden ahmed';
-        $player->handicap = 1;
+        $player = DB::table('players')->get();
+
+        return view('score.score')->with([
+            'player' => $player
+        ]);
+
     }
 
     /**
