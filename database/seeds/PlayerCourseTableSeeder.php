@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Course;
 use App\Player;
+use App\Course;
+
 
 class PlayerCourseTableSeeder extends Seeder
 {
@@ -21,26 +22,25 @@ class PlayerCourseTableSeeder extends Seeder
         //Call to variables:Courses
         $courseSassamon = Course::where('course_name','=','Sassamon Trace')->first();
         $courseBrockton = Course::where('course_name','=','Brockton Country Club')->first();
-        $courseBlueHills = Course::where('course_name','=','Blue Hills Country Club')->first();
-        $courseSandyBurr = Course::where('course_name','=','Sandy Burr')->first();
+        $courseBlue = Course::where('course_name','=','Blue Hills Country Club')->first();
+        $courseSandy = Course::where('course_name','=','Sandy Burr Country Club')->first();
 
 
         $playerArnoldP->courses()->attach($courseSassamon->id);
         $playerArnoldP->courses()->attach($courseBrockton->id);
 
         $playerFredC->courses()->attach($courseBrockton->id);
-        $playerFredC->courses()->attach($courseSandyBurr->id);
+        $playerFredC->courses()->attach($courseSandy->id);
 
-        $playerJohnD->courses()->attach($courseBlueHills->id);
+        $playerJohnD->courses()->attach($courseBlue->id);
         $playerJohnD->courses()->attach($courseBrockton->id);
         $playerJohnD->courses()->attach($courseSassamon->id);
 
 
         $playerTigerW->courses()->attach($courseSassamon->id);
         $playerTigerW->courses()->attach($courseBrockton->id);
-        $playerTigerW->courses()->attach($courseBlueHills->id);
-        $playerTigerW->courses()->attach($courseSandyBurr->id);
-
+        $playerTigerW->courses()->attach($courseBlue->id);
+        $playerTigerW->courses()->attach($courseSandy->id);
 
     }
 }

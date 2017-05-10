@@ -13,7 +13,7 @@ class CoursesTableSeeder extends Seeder
     */
     public function run()
     {
-        
+
 
         $courseSassamon = Course::create(array(
             'course_name' => 'Sassamon Trace'
@@ -23,11 +23,11 @@ class CoursesTableSeeder extends Seeder
             'course_name' => 'Brockton Country Club'
         ));
 
-        $courseSandyBurr = Course::create(array(
+        $courseSandy = Course::create(array(
             'course_name' => 'Sandy Burr Country Club'
         ));
 
-        $courseBlueHills = Course::create(array(
+        $courseBlue = Course::create(array(
             'course_name' => 'Blue Hills Country Club'
         ));
     }

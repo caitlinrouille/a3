@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     //each course has been played by many players
-    protected $fillable = [];
     protected $table = 'courses';
 
     public function players(){
