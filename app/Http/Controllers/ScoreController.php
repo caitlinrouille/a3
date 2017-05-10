@@ -22,8 +22,11 @@ class ScoreController extends Controller
         $score=null;
 
         return view('score.score')->with([
-          'score' => $score
+          'score' => $score,
+          'players' => $players
+
         ]);
+
     }
 
     /**
@@ -86,9 +89,8 @@ class ScoreController extends Controller
                'holeEight' => $holeEight,
                'holeNine' => $holeNine,
                'score' => $score,
-               'total' => $total,
+               'total' => $total
            ]);
-
 
    }
 
@@ -97,14 +99,10 @@ class ScoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function playerList()
+    public function create()
     {
-        $player = DB::table('players')->get();
-
-        return view('score.score')->with([
-            'player' => $player
-        ]);
-
+        $players = Player::all();
+        return view('score.score', compact('players'));
     }
 
     /**

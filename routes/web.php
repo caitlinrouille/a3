@@ -17,7 +17,8 @@
 
 Route::get('/', 'ScoreController@index');
 Route::post('/', 'ScoreController@score');
-Route::post('/', 'ScoreController@playerList');
+Route::post('/', 'ScoreController@create');
+
 
 
 
