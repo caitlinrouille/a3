@@ -21,7 +21,7 @@ class CreatePlayerCourseTable extends Migration
                 $table->integer('player_id')->unsigned();
 
                 $table->foreign('course_id')->references('id')->on('courses');
-                $table->foreign('player_id')->references('id')->on('players')
+                $table->foreign('player_id')->references('id')->on('players');
 
 
                 $table->timestamps();
