@@ -13,25 +13,14 @@ class PlayersTableSeeder extends Seeder
     */
     public function run()
     {
+        $full_name = 'full_name';
+        $players = ['Arnold Palmer', 'Tiger Woods', 'Fred Couples'];
 
-        $playerArnoldP = Player::create(array(
-            'full_name' => 'Arnold Palmer',
-            'handicap' => 3
-        ));
+        foreach($players as $playerName) {
+            $player = new Player();
+            $player -> full_name = $full_name;
+            $player -> save();
+        }
 
-        $playerFredC = Player::create(array(
-            'full_name' => 'Fred Couples',
-            'handicap' => 4
-        ));
-
-        $playerTigerW = Player::create(array(
-            'full_name' => 'Tiger Woods',
-            'handicap' => 2
-        ));
-
-        $playerJohnD = Player::create(array(
-            'full_name' => 'John Daly',
-            'handicap' => 5
-        ));
     }
 }

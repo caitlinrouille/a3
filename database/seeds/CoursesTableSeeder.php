@@ -13,22 +13,14 @@ class CoursesTableSeeder extends Seeder
     */
     public function run()
     {
+        $full_name = 'full_name';
+        $course_name = 'course_name';
+        $courses = ['Sassamon Trace Country Club', 'Brockton Country Club', 'Blue Hills Country Club', 'Sandy Burr Country Club'];
 
-
-        $courseSassamon = Course::create(array(
-            'course_name' => 'Sassamon Trace'
-        ));
-
-        $courseBrockton = Course::create(array(
-            'course_name' => 'Brockton Country Club'
-        ));
-
-        $courseSandy = Course::create(array(
-            'course_name' => 'Sandy Burr Country Club'
-        ));
-
-        $courseBlue = Course::create(array(
-            'course_name' => 'Blue Hills Country Club'
-        ));
+        foreach($courses as $courseName) {
+            $course = new Course();
+            $course -> course_name = $course_name;
+            $course -> save();
+        }
     }
 }

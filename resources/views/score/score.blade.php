@@ -56,26 +56,6 @@
         @endif
     </div>
 </form>
-    <div class="col-sm-12">
-    <h4>Players:</h4>
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Player Name</th>
-            <th>Handicap</th>
-          </tr>
-        </thead>
-        <tbody>
-            @foreach($results as $result)
-          <tr>
-             <td>{{ $results->full_name }}</td>
-             <td>{{ $results->handicap }}</td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
-      
-    </div>
     <!-- show the errors on validate -->
     @if(count($errors) > 0)
         <ul>

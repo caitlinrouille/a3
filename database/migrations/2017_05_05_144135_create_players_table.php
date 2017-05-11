@@ -18,7 +18,6 @@ class CreatePlayersTable extends Migration
             $table->increments('id');
 
             $table->string('full_name');
-            $table->integer('handicap');
 
             $table->timestamps();
 

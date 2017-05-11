@@ -19,14 +19,10 @@ class ScoreController extends Controller
      public function index()
     {
 
-        $results = Player::where('full_name', '=', 'Arnold Palmer')->first();
-        $players=$results->full_name;
         $score=null;
 
         return view('score.score')->with([
           'score' => $score,
-          'players' => $players,
-          'results' => $results,
         ]);
 
     }
@@ -36,7 +32,6 @@ class ScoreController extends Controller
     * /}
    */
    public function score(Request $request){
-
        $this->validate($request, [
            'holeOne' => 'required|numeric',
            'holeTwo' => 'required|numeric',
@@ -62,6 +57,7 @@ class ScoreController extends Controller
 
            $total = $holeOne * $holeTwo + $holeThree + $holeFour + $holeFive + $holeSix + $holeSeven + $holeEight + $holeNine;
            $score = $playerName . " scored a " . $total;
+
 
        //If there is no input in the score fields, don't display the following data. This prevents errors onload.
        if (!$score)
@@ -91,10 +87,21 @@ class ScoreController extends Controller
                'holeEight' => $holeEight,
                'holeNine' => $holeNine,
                'score' => $score,
-               'total' => $total
+               'total' => $total,
            ]);
-
    }
+
+   public function leaderboard()
+   {
+       $results = Player::where('full_name', 'like', $full_name)->first();
+       $players=$results->full_name;
+
+       return view('score.leaders')->with([
+         'players' => $players,
+         'results' => $results,
+       ]);
+
+  }
 
     /**
      * Show the form for creating a new resource.
@@ -103,7 +110,8 @@ class ScoreController extends Controller
      */
     public function create()
     {
-        //
+    //
+
    }
 
     /**
