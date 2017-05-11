@@ -16,15 +16,17 @@ class ScoreController extends Controller
      */
 
 
-    public function index()
+     public function index()
     {
 
+        $results = Player::where('full_name', '=', 'Arnold Palmer')->first();
+        $players=$results->full_name;
         $score=null;
 
         return view('score.score')->with([
           'score' => $score,
-          'players' => $players
-
+          'players' => $players,
+          'results' => $results,
         ]);
 
     }
@@ -101,9 +103,8 @@ class ScoreController extends Controller
      */
     public function create()
     {
-        $players = Player::all();
-        return view('score.score', compact('players'));
-    }
+        //
+   }
 
     /**
      * Store a newly created resource in storage.

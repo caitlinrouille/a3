@@ -17,9 +17,6 @@
 
 Route::get('/', 'ScoreController@index');
 Route::post('/', 'ScoreController@score');
-Route::post('/', 'ScoreController@create');
-
-
 
 
 //logViewer Service Package
