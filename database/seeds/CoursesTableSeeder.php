@@ -13,14 +13,13 @@ class CoursesTableSeeder extends Seeder
     */
     public function run()
     {
-        $full_name = 'full_name';
-        $course_name = 'course_name';
+
         $courses = ['Sassamon Trace Country Club', 'Brockton Country Club', 'Blue Hills Country Club', 'Sandy Burr Country Club'];
 
         foreach($courses as $courseName) {
             $course = new Course();
-            $course -> course_name = $course_name;
-            $course -> save();
+            $course->course_name = $courseName;
+            $course->save();
         }
     }
 }

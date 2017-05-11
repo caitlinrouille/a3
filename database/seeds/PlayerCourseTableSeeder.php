@@ -18,10 +18,10 @@ class PlayerCourseTableSeeder extends Seeder
         $course_name = 'course_name';
 
         $players = [
-            'Arnold Palmer' => ['Brockton Country Club', 'Blue Hills Country Club'],
-            'Tiger Woods' => ['Sassamon Trace Country Club, Brockton Country Club'],
-            'Fred Couples' => ['Blue Hills Country Club, Sassamon Trace Country Club']
-        ]
+            'Arnold Palmer'=>['Brockton Country Club', 'Blue Hills Country Club'],
+            'Tiger Woods'=>['Sassamon Trace Country Club, Brockton Country Club'],
+            'Fred Couples'=>['Blue Hills Country Club, Sassamon Trace Country Club']
+        ];
 
         foreach ($players as $full_name => $courses) {
             $player = Player::where('full_name', 'like', $full_name)->first();

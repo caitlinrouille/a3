@@ -13,14 +13,12 @@ class PlayersTableSeeder extends Seeder
     */
     public function run()
     {
-        $full_name = 'full_name';
         $players = ['Arnold Palmer', 'Tiger Woods', 'Fred Couples'];
 
         foreach($players as $playerName) {
             $player = new Player();
-            $player -> full_name = $full_name;
-            $player -> save();
+            $player->full_name = $playerName;
+            $player->save();
         }
-
     }
 }
