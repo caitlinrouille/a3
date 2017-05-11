@@ -14,8 +14,6 @@ class PlayerCourseTableSeeder extends Seeder
      */
     public function run()
     {
-        $full_name = 'full_name';
-        $course_name = 'course_name';
 
         $players = [
             'Arnold Palmer'=>['Brockton Country Club', 'Blue Hills Country Club'],
@@ -28,10 +26,8 @@ class PlayerCourseTableSeeder extends Seeder
 
             foreach($courses as $courseName) {
                 $course = Course::where('course_name', 'LIKE', $courseName)->first();
-
-                $player->courses()->save($courses);
+                $player->courses()->save($course);
             }
         }
-
     }
 }
