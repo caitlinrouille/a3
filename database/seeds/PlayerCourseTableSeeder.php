@@ -26,7 +26,6 @@ class PlayerCourseTableSeeder extends Seeder
 
             foreach($courses as $courseName) {
                 $course = Course::where('course_name', 'LIKE', $courseName)->first();
-                $player->courses()->save($course);
             }
         }
     }

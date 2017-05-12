@@ -25,7 +25,6 @@ class PlayersTableSeeder extends Seeder
 
             foreach($players as $player) {
 
-                $timestampForThisPlayer = $timestamp->addDay()->toDateTimeString();
                 Player::insert([
                     'created_at' => $timestampForThisPlayer,
                     'updated_at' => $timestampForThisPlayer,
