@@ -40,11 +40,6 @@
             </tbody>
           </table>
     </div>
-    <div class="col-sm-12 form-group">
-    <label for="course">Course Name:</label>
-
-
-    </div>
     <div class="col-sm-12">
         <input name="btn_submit" type="submit" value="Calculate Score" class="btn btn-primary">
     </div>

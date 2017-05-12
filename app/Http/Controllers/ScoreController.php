@@ -149,9 +149,18 @@ class ScoreController extends Controller
      * @param  \App\Score  $score
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Score $score)
+    public function update($id)
     {
-        //
+        # First get a player to delete
+        $player = Player::where('id', '=', $id)->first();
+
+        if(!$player) {
+            dump('Did not update.');
+        }
+        else {
+            $player->delete();
+            dump('Update Complete!');
+        }
     }
 
     /**
@@ -160,16 +169,17 @@ class ScoreController extends Controller
      * @param  \App\Score  $score
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Score $score)
-    {
-        $result = Player::where('full_name', 'LIKE', '%Arnold Palmer%')->first();
+     public function destroy($id)
+         {
+             # First get a player to delete
+             $player = Player::where('id', '=', $id)->first();
 
-        if(!$result) {
-            dump('Did not delete- Book not found.');
-        }
-        else {
-            $result->delete();
-            dump('Deletion complete; check the database to see if it worked...');
-        }
-    }
+             if(!$player) {
+                 dump('Did not delete- Player not found.');
+             }
+             else {
+                 $player->delete();
+                 dump('Deletion complete; check the database to see if it worked...');
+             }
+         }
 }

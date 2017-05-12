@@ -16,7 +16,6 @@
 </head>
 <body>
     <div class="container-fluid mg-top-20">
-        <img class="img-responsive mg-top-15" src="/img/golf-course.png" alt="Golf Course"/>
         <h3>9-Hole Golf Score Card</h3>
         <p>This is a player score card for the game of Golf. Enter in the name of a player and this tool will add the score. Enjoy and good luck!</p>
         <section>
