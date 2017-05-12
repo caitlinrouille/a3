@@ -162,6 +162,14 @@ class ScoreController extends Controller
      */
     public function destroy(Score $score)
     {
-        //
+        $result = Player::where('full_name', 'LIKE', '%Arnold Palmer%')->first();
+
+        if(!$result) {
+            dump('Did not delete- Book not found.');
+        }
+        else {
+            $result->delete();
+            dump('Deletion complete; check the database to see if it worked...');
+        }
     }
 }
