@@ -20,8 +20,8 @@
             @foreach($results as $result)
             <tr>
                <td>{{ $result ['full_name'] }}</td>
-               <td><span name="btn_submit"class="btn btn-primary"><a href='/edit/{{ $result['id'] }}'>Edit</a></td>
-               <td><span name="btn_submit"class="btn btn-primary"><a href='/delete/{{ $result['id'] }}'>Delete</a></td>
+               <td><span class="btn btn-primary"><a href='/edit/{{ $result['id'] }}'>Edit</a></span></td>
+               <td><span class="btn btn-primary"><a href='/delete/{{ $result['id'] }}'>Delete</a></span></td>
             </tr>
             @endforeach
           </tbody>
