@@ -21,13 +21,10 @@ class CoursesTableSeeder extends Seeder
             ['Brockton Country Club'],
             ['Pine Hills Country Club']
         ];
-        $timestamp = Carbon\Carbon::now()->subDays(count($courses));
 
         foreach($courses as $course) {
 
             Course::insert([
-                'created_at' => $timestampForThisCourse,
-                'updated_at' => $timestampForThisCourse,
                 'course_name' =>  $course[0],
             ]);
         }

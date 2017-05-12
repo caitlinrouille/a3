@@ -21,13 +21,9 @@ class PlayersTableSeeder extends Seeder
                 ['Fred Couples'],
                 ['Jason Day']
             ];
-            $timestamp = Carbon\Carbon::now()->subDays(count($players));
 
             foreach($players as $player) {
-
                 Player::insert([
-                    'created_at' => $timestampForThisPlayer,
-                    'updated_at' => $timestampForThisPlayer,
                     'full_name' =>  $player[0],
                 ]);
             }
