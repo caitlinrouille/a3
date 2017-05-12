@@ -93,14 +93,10 @@ class ScoreController extends Controller
 
    public function leaderboard()
    {
-       $results = Player::where('full_name', '=', 'Arnold Palmer')->first();
-       $arnold=$results->full_name;
+       $results = Player::all()->toArray();
+       return view('score.leaders')->with('results', $results);
+    }
 
-       return view('score.leaders')->with([
-         'arnold' => $arnold,
-         'results' => $results,
-       ]);
-  }
 
     /**
      * Show the form for creating a new resource.

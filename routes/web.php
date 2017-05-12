@@ -20,6 +20,7 @@ Route::post('/', 'ScoreController@score');
 Route::get('/leaders', 'ScoreController@leaderboard');
 
 
+
 //logViewer Service Package
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
